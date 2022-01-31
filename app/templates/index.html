@@ -1,0 +1,28 @@
+{% extends 'base.html'%} {% block content %}
+
+<div class="container">
+  <div class="row">
+    {% for data in data_link %}
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem">
+        <img src="{{data.poster}}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><strong>{{ data.title }}</strong></h5>
+          <p class="card-text">{{data.overview}}</p>
+          <div class="vote">
+            <div class="vote-average">
+              <p>{{data.voter-average}}</p>
+            </div>
+            <div class="vote-count">
+              <p>{{data.voter-count}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
